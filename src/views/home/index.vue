@@ -1,20 +1,20 @@
 <template>
-  <div class="container">
-    <div class="home-entry">
-      <!-- 左侧分类 -->
-      <HomeCategory />
-      <!-- 轮播图 -->
-      <HomeBanner />
+  <div class="home-box">
+    <!-- 轮播图 -->
+    <HomeBanner />
+    <div class="container">
       <!-- 新鲜好物 -->
-      <HomeNew />
-      <!-- 人气推荐 -->
-      <HomeHot />
-      <!-- 热门品牌 -->
-      <HomeBrand />
-      <!-- 商品区域 -->
-      <HomeProduct />
-      <!-- 最新专题 -->
-      <HomeSpecial />
+      <div class="home-entry">
+        <!-- 左侧分类 -->
+        <HomeCategory />
+        <HomeNew />
+        <!-- 热门品牌 -->
+        <HomeBrand />
+        <!-- 商品区域 -->
+        <HomeProduct />
+        <!-- 最新专题 -->
+        <HomeSpecial />
+      </div>
     </div>
   </div>
 </template>
@@ -23,7 +23,6 @@
 import HomeCategory from './components/home-category.vue'
 import HomeBanner from './components/home-banner.vue'
 import HomeNew from './components/home-new.vue'
-import HomeHot from './components/home-hot.vue'
 import HomeBrand from './components/home-brand.vue'
 import HomeProduct from './components/home-product.vue'
 import HomeSpecial from './components/home-special.vue'
@@ -33,7 +32,6 @@ export default {
     HomeCategory,
     HomeBanner,
     HomeNew,
-    HomeHot,
     HomeBrand,
     HomeProduct,
     HomeSpecial
@@ -41,4 +39,14 @@ export default {
 }
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+/* .home-entry {
+  width: 1240px;
+  margin: 0 auto;
+  position: relative;
+} */
+.home-box {
+  width: 100%;
+  position: relative;
+}
+</style>

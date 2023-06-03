@@ -11,6 +11,7 @@ html {
 body {
   height: 100%;
   color: #333;
+  width: 100%;
   min-width: 1240px;
   font: 1em/1.4 'Microsoft Yahei', 'PingFang SC', 'Avenir', 'Segoe UI',
     'Hiragino Sans GB', 'STHeiti', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei',
@@ -67,7 +68,7 @@ ul {
 }
 
 .container {
-  width: 1240px;
+  width: 1560px;
   margin: 0 auto;
   position: relative;
 }
@@ -116,4 +117,20 @@ ul {
       opacity: 0;
     }
   }
+}
+
+// 面包屑动画
+.fade-right-enter-to,
+.fade-right-leave-from {
+  opacity: 1;
+  transform: none;
+}
+.fade-right-enter-active,
+.fade-right-leave-active {
+  transition: all 0.5s;
+}
+.fade-right-enter-from,
+.fade-right-leave-to {
+  opacity: 0;
+  transform: translate3d(20px, 0, 0);
 }

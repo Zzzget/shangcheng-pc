@@ -18,7 +18,7 @@
       <Transition name="fade">
         <ul class="list" :class="{ slither: increase }" v-if="brands.length">
           <li v-for="item in brands" :key="item.id">
-            <RouterLink to="/">
+            <RouterLink :to="`/product/${item.id}`">
               <img :src="item.picture" :alt="item.name" />
             </RouterLink>
           </li>

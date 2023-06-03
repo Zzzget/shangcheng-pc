@@ -10,13 +10,6 @@
         <XtxMore />
       </template>
       <div class="box">
-        <RouterLink class="cover" to="/">
-          <img v-lazy="item.picture" :alt="item.name" />
-          <strong class="label">
-            <span>{{ item.name + '馆' }}</span>
-            <span>{{ item.saleInfo }}</span>
-          </strong>
-        </RouterLink>
         <ul class="goods-list">
           <li v-for="goods in item.goods" :key="goods.id">
             <HomeGoods :goodsList="goods" />
@@ -105,13 +98,13 @@ export default {
       }
     }
     .goods-list {
-      width: 990px;
+      width: 1560px;
       display: flex;
       flex-wrap: wrap;
       li {
-        width: 240px;
+        width: 350px;
         height: 300px;
-        margin-right: 10px;
+        margin-right: 30px;
         margin-bottom: 10px;
         &:nth-last-child(-n + 4) {
           margin-bottom: 0;

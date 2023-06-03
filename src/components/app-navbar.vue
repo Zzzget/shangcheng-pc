@@ -8,11 +8,11 @@
               ><i class="iconfont icon-user"></i>{{ profile.account }}</a
             >
           </li>
-          <li><a href="javascript:;">退出登录</a></li>
+          <li><a href="javascript:;" @click="outLogin">退出登录</a></li>
         </template>
 
         <template v-else>
-          <li><a href="javascript:;">请先登录</a></li>
+          <li><RouterLink to="/login">请先登录</RouterLink></li>
           <li><a href="javascript:;">免费注册</a></li>
         </template>
         <li><a href="javascript:;">我的订单</a></li>
@@ -29,17 +29,25 @@
 <script>
 import { computed } from 'vue'
 import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
 
 export default {
   name: 'AppTopnav',
   setup() {
     // 获取用户的登录信息
     const store = useStore()
+    const router = useRouter()
     // 以计算属性形式导入才是响应式
     const profile = computed(() => {
       return store.state.user.profile
     })
-    return { profile }
+
+    const outLogin = () => {
+      router.push('/login')
+      store.commit('user/setUser', {})
+      store.commit('cart/setCartList', [])
+    }
+    return { profile, outLogin }
   }
 }
 </script>

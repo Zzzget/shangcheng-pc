@@ -19,8 +19,8 @@ export default {
 </script>
 <style scoped lang="less">
 .home-banner {
-  width: 1240px;
-  height: 500px;
+  width: 100%;
+  height: 600px;
   position: absolute;
   left: 0;
   top: 0;

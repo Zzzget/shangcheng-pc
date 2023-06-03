@@ -4,7 +4,7 @@
 
     <div class="special-list" ref="homeSpecial">
       <div class="special-item" v-for="item in result" :key="item.id">
-        <RouterLink to="/">
+        <RouterLink :to="`/product/${item.id}`">
           <img :src="item.detailsUrl" alt />
           <div class="meta">
             <p class="title">

@@ -10,6 +10,7 @@
         <RouterLink :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
         <template v-if="item.children">
           <RouterLink
+            class="sub"
             v-for="sub in item.children"
             :key="sub.id"
             :to="`/category/sub/${sub.id}`"
@@ -39,7 +40,7 @@
       <!-- 商品 -->
       <ul>
         <li v-for="item in currCategory.goods" :key="item.id">
-          <RouterLink to="/">
+          <RouterLink :to="`/product/${item.id}`">
             <img :src="item.picture" alt="" />
             <div class="info">
               <p class="name ellipsis-2">{{ item.name }}</p>
@@ -116,14 +117,14 @@ export default {
 <style scoped lang="less">
 .home-category {
   width: 250px;
-  height: 500px;
+  height: 600px;
   background: rgba(0, 0, 0, 0.8);
   position: relative;
   z-index: 99;
   .menu {
     li {
       padding-left: 40px;
-      height: 50px;
+      height: 60px;
       line-height: 50px;
       &:hover,
       &.active {
@@ -133,7 +134,7 @@ export default {
         margin-right: 4px;
         color: #fff;
         &:first-child {
-          font-size: 16px;
+          font-size: 20px;
         }
       }
     }

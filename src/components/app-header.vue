@@ -9,7 +9,7 @@
       </div>
       <div class="cart">
         <a class="curr" href="#">
-          <i class="iconfont icon-cart"></i><em>2</em>
+          <AppHeaderCart />
         </a>
       </div>
     </div>
@@ -18,10 +18,12 @@
 
 <script>
 import AppHeaderNav from '@/components/app-header-nav.vue'
+import AppHeaderCart from './app-hease-cart.vue'
 export default {
   name: 'AppHeader',
   components: {
-    AppHeaderNav
+    AppHeaderNav,
+    AppHeaderCart
   }
 }
 </script>
@@ -40,7 +42,9 @@ export default {
       height: 132px;
       width: 100%;
       text-indent: -9999px;
-      background: url(../assets/images/logo.png) no-repeat center 18px / contain;
+      background: url(../assets/images/logo-we_korea.png) no-repeat center -10px /
+        contain;
+      background-size: 160px;
     }
   }
   .search {

@@ -1,6 +1,6 @@
 <template>
   <div class="goods-item">
-    <RouterLink to="/" class="image">
+    <RouterLink :to="`/product/${goodsList.id}`" class="image">
       <img v-lazy="goodsList.picture" :alt="goodsList.name" />
     </RouterLink>
     <p class="name ellipsis-2">{{ goodsList.name }}</p>
@@ -29,7 +29,7 @@ export default {
 
 <style scoped lang="less">
 .goods-item {
-  width: 240px;
+  width: 320px;
   height: 300px;
   padding: 10px 30px;
   position: relative;

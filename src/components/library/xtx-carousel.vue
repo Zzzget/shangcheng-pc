@@ -1,14 +1,29 @@
 <template>
   <div class="xtx-carousel" @mouseover="stop" @mouseleave="start">
     <ul class="carousel-body">
-      <li
-        class="carousel-item"
-        :class="{ fade: next === index }"
-        v-for="(item, index) in sliders"
-        :key="item.id"
-      >
+      <li class="carousel-item" :class="{ fade: next === 1 }">
         <RouterLink to="/">
-          <img :src="item.imgUrl" alt="" />
+          <img src="../../assets/images/carousel_1.jpg" alt="" />
+        </RouterLink>
+      </li>
+      <li class="carousel-item" :class="{ fade: next === 2 }">
+        <RouterLink to="/">
+          <img src="../../assets/images/carousel_2.jpg" alt="" />
+        </RouterLink>
+      </li>
+      <li class="carousel-item" :class="{ fade: next === 3 }">
+        <RouterLink to="/">
+          <img src="../../assets/images/carousel_3.jpg" alt="" />
+        </RouterLink>
+      </li>
+      <li class="carousel-item" :class="{ fade: next === 4 }">
+        <RouterLink to="/">
+          <img src="../../assets/images/carousel_4.jpg" alt="" />
+        </RouterLink>
+      </li>
+      <li class="carousel-item" :class="{ fade: next === 5 }">
+        <RouterLink to="/">
+          <img src="../../assets/images/carousel_5.jpg" alt="" />
         </RouterLink>
       </li>
     </ul>
@@ -20,7 +35,7 @@
     ></a>
     <div class="carousel-indicator">
       <span
-        v-for="(item, index) in sliders"
+        v-for="index in 5"
         :key="index"
         @click="next = index"
         :class="{ active: index === next }"
@@ -53,7 +68,7 @@ export default {
     }
   },
   setup(props) {
-    const next = ref(0)
+    const next = ref(1)
     // console.log(props.sliders.length)
     // 轮播图右侧按钮方法
     /* const getNext = () => {
@@ -74,12 +89,12 @@ export default {
     // 轮播图按钮函数方法
     const toggle = (num) => {
       const nweNext = next.value + num
-      if (nweNext >= props.sliders.length) {
-        next.value = 0
+      if (nweNext > props.sliders.length) {
+        next.value = 1
         return
       }
-      if (nweNext < 0) {
-        next.value = props.sliders.length - 1
+      if (nweNext <= 0) {
+        next.value = props.sliders.length
         return
       }
       next.value = nweNext
@@ -114,7 +129,6 @@ export default {
       },
       { immediate: true }
     )
-
     // 4.组件卸载，清除定时器
     onUnmounted(() => {
       clearInterval(timer)
